@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Attendence</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="members/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col class="leave-details">
+      <ion-icon class="green" name="ellipse"></ion-icon>
+      <span>Holidays</span>
+    </ion-col>
+    <ion-col class="leave-details">
+      <ion-icon class="red" name="ellipse"></ion-icon>
+      <span>Leaves</span>
+    </ion-col>
+    <ion-col class="leave-details">
+      <ion-icon class="yellow" name="ellipse"></ion-icon>
+      <span>Half-day</span>
+    </ion-col>
+  </ion-row>
+  <ejs-calendar #calendarObj dayHeaderFormat='Narrow' (change)="onChange($event)" (renderDayCell)='customDates($event)'></ejs-calendar>
+  <ion-card>
+    <ion-card-header>
+      Attendence Percentage
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="10">No of Working days yet</ion-col>
+        <ion-col size="2">{{working_days}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="10">No of Leaves</ion-col>
+        <ion-col class="leave-days" size="2">{{no_of_leaves}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="10">Attendence Percentage</ion-col>
+        <ion-col class="percentage" col-2>{{percentage}}%</ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

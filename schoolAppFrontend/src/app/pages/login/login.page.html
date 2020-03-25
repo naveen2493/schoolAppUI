@@ -1,0 +1,41 @@
+<ion-content>
+  <h2>Login</h2>
+  <div class="card-center">
+    <div>
+      <form padding-right>
+        <ion-card>
+
+          <ion-row class="bottom">
+
+            <ion-col class="center" size=2>
+              <ion-icon name="person-outline"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <ion-item no-lines>
+
+                <ion-label position="floating">Email/Username</ion-label>
+                <ion-input type="text" required></ion-input>
+              </ion-item>
+
+            </ion-col>
+
+          </ion-row>
+          <ion-row>
+            <ion-col class="center" size=2>
+              <ion-icon name="key-outline"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <ion-item no-lines>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        <ion-button color="primary" expand="block" (click)="loginForm()">Login</ion-button>
+        <p>forget password</p>
+
+      </form>
+    </div>
+  </div>
+</ion-content>

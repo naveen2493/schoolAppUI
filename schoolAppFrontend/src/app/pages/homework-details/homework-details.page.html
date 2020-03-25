@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Homework Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="members/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h4>{{date}}</h4>
+  <ion-row class="all-days">
+    <div (click)="fetchAllDays()">
+    <span>All days</span>
+    <ion-icon name="calendar-outline"></ion-icon>
+  </div>
+  </ion-row>
+
+  <div *ngFor="let subject of subjects">
+    <ion-card>
+      <ion-card-header>
+        {{subject}}
+      </ion-card-header>
+      <ion-card-content>
+        {{homework[subject]}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

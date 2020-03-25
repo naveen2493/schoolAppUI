@@ -1,0 +1,149 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Exam dates</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="members/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container">
+    <div class="row" *ngFor="let exam of exams">
+      <div *ngFor="let examName of objectKeys(exam)">
+        <div class="toggle mb-2">
+          <h3><span class="plus">+</span>{{examName}}</h3>
+          <div style="display: none;">
+            <div class="wpb_text_column wpb_content_element">
+              <div class="wpb_wrapper">
+                <table>
+                  <tr>
+                    <th>Subject</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                  </tr>
+                  <tr *ngFor="let subject of objectKeys(exam[examName])">
+                    <td>{{subject}}</td>
+                    <td>{{exam[examName][subject][0]}}</td>
+                    <td>{{exam[examName][subject][1]}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="toggle mb-2"><h3><span class="plus">+</span><a href="#">Lorem Ipsum is simply dummy text of the printing.</a></h3>
+                      <div style="display: none;">
+                          <div class="wpb_text_column wpb_content_element">
+                              <div class="wpb_wrapper">
+                                  <p>Lorem Ipsum is simply dummy text of the printing.:</p>
+                                  <ul>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                   <div class="toggle mb-2"><h3><span class="plus">+</span><a href="#">Lorem Ipsum is simply dummy text of the printing.</a></h3>
+                      <div style="display: none;">
+                          <div class="wpb_text_column wpb_content_element">
+                              <div class="wpb_wrapper">
+                                  <p>Lorem Ipsum is simply dummy text of the printing.:</p>
+                                  <ul>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="toggle mb-2"><h3><span class="plus">+</span><a href="#">Lorem Ipsum is simply dummy text of the printing.</a></h3>
+                      <div style="display: none;">
+                          <div class="wpb_text_column wpb_content_element">
+                              <div class="wpb_wrapper">
+                                  <p>Lorem Ipsum is simply dummy text of the printing.:</p>
+                                  <ul>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div> -->
+      <!-- </div> -->
+
+      <!-- <div class="col-sm-6">
+                  <div class="toggle mb-2"><h3><span class="plus">+</span><a href="#">Lorem Ipsum is simply dummy text of the printing.</a></h3>
+                      <div style="display: none;">
+                          <div class="wpb_text_column wpb_content_element">
+                              <div class="wpb_wrapper">
+                                  <p>Lorem Ipsum is simply dummy text of the printing.:</p>
+                                  <ul>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                   <div class="toggle mb-2"><h3><span class="plus">+</span><a href="#">Lorem Ipsum is simply dummy text of the printing.</a></h3>
+                      <div style="display: none;">
+                          <div class="wpb_text_column wpb_content_element">
+                              <div class="wpb_wrapper">
+                                  <p>Lorem Ipsum is simply dummy text of the printing.:</p>
+                                  <ul>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                   <div class="toggle mb-2"><h3><span class="plus">+</span><a href="#">Lorem Ipsum is simply dummy text of the printing.</a></h3>
+                      <div style="display: none;">
+                          <div class="wpb_text_column wpb_content_element">
+                              <div class="wpb_wrapper">
+                                  <p>Lorem Ipsum is simply dummy text of the printing.:</p>
+                                  <ul>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="toggle mb-2"><h3><span class="plus">+</span><a href="#">Lorem Ipsum is simply dummy text of the printing.</a></h3>
+                      <div style="display: none;">
+                          <div class="wpb_text_column wpb_content_element">
+                              <div class="wpb_wrapper">
+                                  <p>Lorem Ipsum is simply dummy text of the printing.:</p>
+                                  <ul>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                      <li><strong>Lorem Ipsum</strong>: Lorem Ipsum is simply dummy text of the printing.</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div> -->
+
+    </div>
+  </div>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+</ion-content>

@@ -1,0 +1,73 @@
+ion-content{
+    --background: rgb(9,24,45);
+
+    .event-card{
+      background-color: white;
+      width: 94%;
+      margin: 0 auto;
+      // text-align: center;
+      padding: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      p{
+        width: 75%;
+        border: 3px dotted #c60929;
+        margin: 0 auto;
+        padding: 10px;
+        font-family: calibri;
+        text-align: center;
+        font-weight: bold;
+        span{
+          font-size: 12px;
+          color: #c60929;
+        }
+      }
+      span{
+        color: #c60929;
+        font-weight: bold;
+      }
+      span.cal{
+        background-image: url(../../../assets/11-119684_calendar-empty-ultrathin-page-comments-calendar-icon-line-png.png);
+        width: 65px;
+        background-repeat: no-repeat;
+        height: 63px;
+        background-size: 100%;
+        display: inline-block;
+        background-color: white;
+        padding: 27px 0 0 0;
+        text-align: center;
+        font-size: 12px;
+        color: #c60929;
+        margin: 8px 11px -1px 0;
+        .day{
+
+        }
+        .year{
+          // font-size: 10px;
+        }
+      }
+      ion-icon{
+        color: #c60929;
+        font-size: 37px;
+        float: right;
+        position: relative;
+        top: 25px;
+
+      }
+      span.imgCount{
+        position: relative;
+        top: 15px;
+        float: right;
+        border: 1px solid rgb(9,24,45);
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        font-size: 13px;
+        right: -4px;
+      }
+    }
+    .mat-form-field + .mat-form-field {
+      margin-left: 8px;
+    }
+}

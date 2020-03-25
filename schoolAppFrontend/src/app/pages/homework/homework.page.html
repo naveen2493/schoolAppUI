@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Homework
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="members/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ejs-calendar #ejCalendar dayHeaderFormat='Narrow' (change)="onChange($event)"></ejs-calendar>
+</ion-content>

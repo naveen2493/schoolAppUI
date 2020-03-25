@@ -1,0 +1,317 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Timetable
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="members/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="background-primary" [fullscreen]="true">
+  <ion-grid class="timetable-bg" size="12"> 
+    <ion-row class="headerCol" [attr.data-index]="i" *ngFor="let item of timeTableData; let i = index">
+      <ion-col size="2"  [attr.data-colindex]="ind" *ngFor="let x of item; let ind = index">
+        <div [ngClass]="{'highlightClass':weekday == $index}">
+        {{x}}
+        </div>
+      </ion-col>
+
+    </ion-row>
+    <div class="weekday">{{weekday}}</div>
+    <div class="hour">{{hour | date:'H'}}</div>
+    <!-- <ion-row class="headerCol">
+      <ion-col size="2">
+        <div>
+        
+        </div>
+      </ion-col>
+      <ion-col >
+        <div>
+         Mon
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Tue
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Wed
+        </div>
+      </ion-col>
+      <ion-col >
+        <div>
+          Thu
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Fri
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2">
+        <div>
+        1
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Eng
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Tam
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Sci
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Social
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Bot
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2">
+        <div>
+         2
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Eng
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Tam
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Sci
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Social
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Bot
+        </div>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col size="2">
+        <div>
+        3
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Eng
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Tam
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Sci
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Social
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Bot
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2">
+        <div>
+         4
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Eng
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Tam
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Sci
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Social
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Bot
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2">
+        <div>
+        5
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Eng
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Tam
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Sci
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Social
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Bot
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2">
+        <div>
+         6
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Eng
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Tam
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Sci
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Social
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Bot
+        </div>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row> 
+      <ion-col size="2">
+        <div>
+        7
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Eng
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Tam
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Sci
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Social
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Bot
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2">
+        <div>
+         8
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Eng
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Tam
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Sci
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          Social
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+         Bot
+        </div>
+      </ion-col>
+    </ion-row> -->
+   
+  </ion-grid>
+</ion-content>

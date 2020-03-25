@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col>
+        <div class="square" (click)="goToPage('homework-details')">
+          <ion-icon name="book-outline"></ion-icon><br />
+          <span>Homework</span>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="square" (click)="goToPage('timetable')">
+          <ion-icon name="time-outline"></ion-icon><br />
+          <span>Timetable</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="square" (click)="goToPage('eventspage')">
+          <ion-icon name="newspaper-outline"></ion-icon><br />
+          <span>News & Events</span>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="square" (click)="goToPage('exam-dates')">
+          <ion-icon name="calendar-outline"></ion-icon><br />
+          <span>Exam Dates</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="square" (click)="goToPage('attendence')">
+          <ion-icon name="hand-left-outline"></ion-icon><br />
+          <span>Attendence</span>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="square" (click)="goToPage('performance')">
+          <ion-icon name="bar-chart-outline"></ion-icon><br />
+          <span>Performance</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="square" (click)="goToPage('report-card')">
+          <ion-icon name="medal-outline"></ion-icon><br />
+          <span>Report Card</span>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="square" (click)="goToPage('exam-syllabus')">
+          <ion-icon name="bar-chart-outline"></ion-icon><br />
+          <span>Exam Syllabus</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "schoolAppFrontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
