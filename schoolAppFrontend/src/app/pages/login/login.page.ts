@@ -12,7 +12,11 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private router: Router, private auth: AuthenticationService) { 
+  constructor(private router: Router, private auth: AuthenticationService) {
+    let elem = <HTMLElement>document.querySelector("ion-tab-bar");
+    if (elem != null) {
+      elem.style.display = 'none';
+    }
     // let elem = <HTMLElement>document.querySelector("ion-tab-bar");
     // if (elem != null) {
     //   elem.style.display = 'none';
@@ -25,7 +29,7 @@ export class LoginPage implements OnInit {
 
   loginForm() {
     this.auth.login();
-    this.router.navigate(['home']);
+    this.router.navigate(['members/home']);
   }
 
 }

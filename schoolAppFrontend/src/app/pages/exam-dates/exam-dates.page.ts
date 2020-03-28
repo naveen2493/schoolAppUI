@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Accordion } from '@syncfusion/ej2-navigations';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(true);
 import * as $ from 'jquery';

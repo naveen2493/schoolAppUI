@@ -23,7 +23,7 @@ main{
 	}
 }
 
-.menu{
+.menu {
 	background: #fff;
 	height:100vh;
 	position:fixed;
@@ -32,12 +32,12 @@ main{
 	z-index:5;
 	outline:none;
 	
-	.avatar{
+	.avatar {
 		background:rgba(0,0,0,0.1);
 		padding:2em 0.5em;
 		text-align:center;
 		
-		img{
+		img {
 			width:100px;
 			border-radius:50%;
 			overflow:hidden;
@@ -45,18 +45,18 @@ main{
 			box-shadow:0 0 0 4px rgba(255,255,255,0.2);
 		}
 		
-		h2{
+		h2 {
 			font-weight:normal;
 			margin-bottom:0;
 		}
 	}
 	
-	ul{
+	ul {
 		list-style:none;
 		padding:0.5em 0;
 		margin:0;
 		
-		li{
+		li {
 			padding:0.5em 1em 0.5em 3em;
 			font-size:0.95em;
 			font-weight:regular;
@@ -78,25 +78,25 @@ main{
 }
 
 @media screen and (max-width:900px){
-	body{
+	body {
 		padding-left:0;
 	}
 	
-	.menu{
+	.menu {
 		width: 300px;
 		box-shadow:0 0 0 100em rgba(0,0,0,0);
 		transform:translate3d(-300px,0,0);
 		transition:all 0.3s ease-in-out;
 		
-		.smartphone-menu-trigger{
+		.smartphone-menu-trigger {
 			width:50px;
 			height:50px;
 			position:absolute;
 			left:100%;
 			background: #fff;
 			
-			&:before, &:after{
-				content:'';
+			&:before, &:after {
+				// content:'';
 				width:50%;
 				height:2px;
 				background: var(--ion-color-primary);
@@ -107,15 +107,15 @@ main{
 				transform:translate3d(-50%, -50%, 0);
 			}
 			
-			&:after{
+			&:after {
 				top:55%;
 				transform:translate3d(-50%, -50%, 0);
 			}
 		}
 		
-		ul{
+		ul {
 			
-			li{
+			li {
 				padding:1em 1em 1em 3em;
 				font-size:1.2em;
 			}
@@ -132,6 +132,12 @@ main{
 	}
 }
 
+.menu-bar {
+	padding-top: 25%;
+	padding-left: 25%;
+	font-size: 2rem;
+	color: var(--ion-color-primary);
+}
 
 @import "https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
 

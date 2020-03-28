@@ -1,14 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { mobiscroll } from '@mobiscroll/angular';
 import { HttpClient } from '@angular/common/http';
 import { AlertController } from '@ionic/angular';
 import { CalendarComponent, Calendar } from '@syncfusion/ej2-angular-calendars';
-
-
-mobiscroll.settings = {
-  theme: 'ios',
-  themeVariant: 'light'
-};
 
 const now = new Date();
 

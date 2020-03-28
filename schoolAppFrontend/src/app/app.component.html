@@ -1,7 +1,9 @@
 <ion-app>
   <!-- <ion-menu> -->
-  <nav *ngIf="showHead" class="menu" tabindex="0">
-    <div class="smartphone-menu-trigger"></div>
+  <nav id="menu-bar" class="menu" tabindex="0">
+    <div class="smartphone-menu-trigger">
+      <ion-icon class="menu-bar" name="menu-outline"></ion-icon>
+    </div>
     <h2 class="username">Welcome {{user.username}}</h2>
 
     <div class="circle">
@@ -42,12 +44,11 @@
       <ion-col>{{user.email}}</ion-col>
     </ion-row>
   </nav>
-<!-- </ion-menu> -->
   <ion-router-outlet id="main">
-
-    <!-- <ion-tabs *ngIf="showHead">
+  </ion-router-outlet>
+    <ion-tabs id="tabs-bar">
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="home">
+        <ion-tab-button class="home-tab tab-selected" (click)="addClass()" tab="members/home">
           <ion-icon name="home-outline"></ion-icon>
           <ion-label>Home</ion-label>
         </ion-tab-button>
@@ -62,24 +63,5 @@
           <ion-label>Timetable</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
-    </ion-tabs> -->
-  </ion-router-outlet>
-  <ion-tabs *ngIf="showHead">
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button class="home-tab tab-selected" (click)="addClass()" tab="members/home">
-        <ion-icon name="home-outline"></ion-icon>
-        <ion-label>Home</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button tab="homework">
-        <ion-icon name="book-outline"></ion-icon>
-        <ion-label>Homework</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button tab="timetable">
-        <ion-icon name="calendar-outline"></ion-icon>
-        <ion-label>Timetable</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+    </ion-tabs>
 </ion-app>

@@ -4,6 +4,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
+import * as $ from 'jquery';
+
 
 
 @Component({
@@ -15,13 +17,7 @@ export class AppComponent {
   pages: any[] = [];
   items;
   user = { username: "Sadasivam", student_name: "Naveen", class: "5th", phone: "9952267549", email: "sadasivam@gmail.com" }
-  menu_bar;
-  menu_item;
-  menu_indicator;
-  menu_current_item;
-  menu_position;
   routerPage;
-  showHead: boolean = false;
 
   constructor(
     private platform: Platform,
@@ -34,8 +30,7 @@ export class AppComponent {
     this.routerPage = router.url;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -59,12 +54,33 @@ export class AppComponent {
     });
 
     this.authenticationService.authenticationState.subscribe(state => {
+
       if (state) {
+        $(document).ready(function () {
+          if (document.getElementById('menu-bar')) {
+            document.getElementById('menu-bar').style.display = 'block';
+          }
+          let elem = <HTMLElement>document.querySelector("ion-tab-bar");
+          if (elem != null) {
+            elem.style.display = 'block';
+          }
+        });
+
         this.router.navigate(['members', 'home']);
-        this.showHead = true;
+
       } else {
+        $(document).ready(function () {
+          if (document.getElementById('menu-bar')) {
+            document.getElementById('menu-bar').style.display = 'none';
+          }
+          let elem = <HTMLElement>document.querySelector("ion-tab-bar");
+          if (elem != null) {
+            elem.style.display = 'none';
+          }
+        });
+
         this.router.navigate(['login']);
-        this.showHead = false;
+
       }
     });
   }
@@ -77,7 +93,7 @@ export class AppComponent {
       this.items[i].style.left = (50 - 35 * Math.cos(-0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
       this.items[i].style.top = (50 + 35 * Math.sin(-0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
     }
-    
+
     document.querySelector('.center').classList.toggle('small');
 
     document.querySelector('.circle').classList.toggle('open');
