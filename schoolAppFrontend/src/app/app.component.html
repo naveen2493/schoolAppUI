@@ -46,22 +46,24 @@
   </nav>
   <ion-router-outlet id="main">
   </ion-router-outlet>
-    <ion-tabs id="tabs-bar">
-      <ion-tab-bar slot="bottom">
+  <ion-tabs>
+    <div class="tabs">
+      <ion-tab-button class="tab-selected" (click)="addClass()" tab="members/home">
+        <div class="home-tab">
+          <ion-row>
+            <ion-icon name="home-outline"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <!-- <ion-label>Home</ion-label> -->
+          </ion-row>
+        </div>
+      </ion-tab-button>
+    </div>
+    <!-- <ion-tab-bar [translucent]="true" class="tabs-bar" slot="bottom">
         <ion-tab-button class="home-tab tab-selected" (click)="addClass()" tab="members/home">
           <ion-icon name="home-outline"></ion-icon>
           <ion-label>Home</ion-label>
         </ion-tab-button>
-
-        <ion-tab-button tab="homework">
-          <ion-icon name="book-outline"></ion-icon>
-          <ion-label>Homework</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button tab="timetable">
-          <ion-icon name="calendar-outline"></ion-icon>
-          <ion-label>Timetable</ion-label>
-        </ion-tab-button>
-      </ion-tab-bar>
-    </ion-tabs>
+      </ion-tab-bar> -->
+  </ion-tabs>
 </ion-app>

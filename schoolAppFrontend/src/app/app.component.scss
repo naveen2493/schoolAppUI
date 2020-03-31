@@ -24,7 +24,7 @@ main{
 }
 
 .menu {
-	background: #fff;
+	background: #03A9F4;
 	height:100vh;
 	position:fixed;
 	top:0;
@@ -93,7 +93,7 @@ main{
 			height:50px;
 			position:absolute;
 			left:100%;
-			background: #fff;
+			background: #03A9F4;
 			
 			&:before, &:after {
 				// content:'';
@@ -253,6 +253,45 @@ ion-row {
 	}
 }
 
+// .tabs-bar {
+// 	background-color: blue;
+// }
+
 .tab-selected {
 	color: var(--ion-color-primary);
+}
+
+.tabs {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: rgb(140, 140, 140);
+    background-color: transparent;
+}
+
+.home-tab {
+	height:	4rem;
+	width: 4rem;
+	border-radius: 50%;
+	background: white;
+	border: 2px solid var(--ion-color-primary);
+	margin-bottom: 0.5rem;
+
+	ion-row {
+		text-align: center;
+	}
+	ion-icon {
+		font-size: 2rem;
+	}
+}
+
+ion-content {
+	--background: blue;
+}
+
+.toolbar-background {
+	background: #03A9F4;
 }

@@ -60,9 +60,9 @@ export class AppComponent {
           if (document.getElementById('menu-bar')) {
             document.getElementById('menu-bar').style.display = 'block';
           }
-          let elem = <HTMLElement>document.querySelector("ion-tab-bar");
+          let elem = <HTMLElement>document.querySelector("ion-tab-button");
           if (elem != null) {
-            elem.style.display = 'block';
+            elem.style.display = 'none';
           }
         });
 
@@ -73,7 +73,7 @@ export class AppComponent {
           if (document.getElementById('menu-bar')) {
             document.getElementById('menu-bar').style.display = 'none';
           }
-          let elem = <HTMLElement>document.querySelector("ion-tab-bar");
+          let elem = <HTMLElement>document.querySelector("ion-tab-button");
           if (elem != null) {
             elem.style.display = 'none';
           }

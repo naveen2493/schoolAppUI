@@ -77,6 +77,10 @@ const routes: Routes = [
   {
     path: 'exam-dates',
     loadChildren: () => import('./pages/exam-dates/exam-dates.module').then( m => m.ExamDatesPageModule)
+  },
+  {
+    path: 'syllabus-details',
+    loadChildren: () => import('./pages/syllabus-details/syllabus-details.module').then( m => m.SyllabusDetailsPageModule)
   }
 ];
 @NgModule({

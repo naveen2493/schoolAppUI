@@ -12,11 +12,9 @@ export class HomeworkPage implements OnInit {
 
   @ViewChild('ejCalendar', {static: false}) calendarObj: CalendarComponent;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   onChange(args) {
     var date = args.value.toLocaleDateString();

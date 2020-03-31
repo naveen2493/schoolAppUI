@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-exam-syllabus',
@@ -10,41 +11,21 @@ export class ExamSyllabusPage implements OnInit {
 
   objectKeys = Object.keys;
 
-  exams = [
-    { '1st Mid-Term': 
-          { 
-            'Tamil': ['Lesson 1 to Lesson 3'], 
-            'English': ['3 poetry , 2 stories'], 
-            'Maths': ['5 probelmas from 1 st unit'] }
-          },
-  { '2nd Mid-Term': 
-            {  'Tamil': ['Lesson 1 to Lesson 3'], 
-            'English': ['3 poetry , 2 stories'], 
-            'Maths': ['5 probelmas from 1 st unit']
-            }
-  },
-  { 'Quarterly Exam': 
-  { 
-    'Tamil': ['Lesson 1 to Lesson 3'], 
-    'English': ['3 poetry , 2 stories'], 
-    'Maths': ['5 probelmas from 1 st unit'] }
-  },
-
-{ '2nd Mid-Term': 
-    {  'Tamil': ['Lesson 1 to Lesson 3'], 
-    'English': ['3 poetry , 2 stories'], 
-    'Maths': ['5 probelmas from 1 st unit']
-    }
-   
-},
-{ 'Half Yearly': 
-    {  'Tamil': ['Lesson 1 to Lesson 3'], 
-    'English': ['3 poetry , 2 stories'], 
-    'Maths': ['5 probelmas from 1 st unit']
-    }
-  }
-];
-  constructor() { }
+  subjectSyllabus;
+  subjects = []
+  
+  constructor(public router: Router, public route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      console.log("this date first");
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.subjectSyllabus = this.router.getCurrentNavigation().extras.state.date;
+        console.log("this date", this.subjectSyllabus);
+        this.subjects = Object.keys(this.subjectSyllabus);
+        console.log("this date sub", this.subjects);
+        // debugger;
+      }
+    });
+   }
 
   ngOnInit() {
     $(document).ready(function () {
@@ -73,6 +54,10 @@ export class ExamSyllabusPage implements OnInit {
         }
       });
     });
+  }
+
+  keys() : Array<string> {
+    return Object.keys(this.subjectSyllabus);
   }
 
 }

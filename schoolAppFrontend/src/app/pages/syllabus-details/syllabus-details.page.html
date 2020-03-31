@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Exam Syllabus</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="members/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="row" *ngFor="let exam of syllabusDetails">
+    <div *ngFor="let examName of objectKeys(exam)">
+      <ion-button expand="block" (click)="goToDetails(examName)">{{examName}}</ion-button>
+    </div>
+  </div>
+
+</ion-content>

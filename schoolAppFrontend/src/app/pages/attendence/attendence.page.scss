@@ -76,6 +76,9 @@ ion-card-header {
         }
       }
 
+      .e-calendar .e-content td.e-focused-date span.e-day {
+          background: none;
+      }
 }
 
 .special.e-day.e-ripple-style {

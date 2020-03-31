@@ -17,6 +17,10 @@ export class HomeworkDetailsPage implements OnInit {
   homeworkDetails: Homework;
 
   constructor(private route: ActivatedRoute, private router: Router, private homeworkService: HomeworkService) {
+    // Mock homwork data
+    this.homework = {'Tamil':'Write 10 thirukural and give explanation for each kural', 'English': 'Write English caps and small letters. Give a word for each letter. Ex: A for Apple', 'Maths':'Give a examples sums for Addition, Subraction, multiply and Divition', 'Science': 'Give science name for few flowers', 'Social Science': 'Mark all states of India in Map'};
+    this.subjects = Object.keys(this.homework);
+
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.date = this.router.getCurrentNavigation().extras.state.date;
@@ -40,6 +44,7 @@ export class HomeworkDetailsPage implements OnInit {
       }
       this.fetchHomeWorkDetails(this.params);
     }
+    console.log("Homework", this.homework);
   }
 
   ngOnInit() {
@@ -47,6 +52,10 @@ export class HomeworkDetailsPage implements OnInit {
   }
 
   fetchHomeWorkDetails(homeworkParams) {
+    // Mock homwork data
+    this.homework = {'Tamil':'Write 10 thirukural and give explanation for each kural', 'English': 'Write English caps and small letters. Give a word for each letter. Ex: A for Apple', 'Maths':'Give a examples sums for Addition, Subraction, multiply and Divition', 'Science': 'Give science name for few flowers', 'Social Science': 'Mark all states of India in Map'};
+    this.subjects = Object.keys(this.homework);
+
     this.homeworkService.get(this.homeworkService.getParams(homeworkParams)).subscribe((res) => {
       if(res.homeWorksData.length > 0) {
       this.homeworkDetails = new Homework().deserialize(res.homeWorksData[0]);
@@ -62,11 +71,6 @@ export class HomeworkDetailsPage implements OnInit {
 
   fetchAllDays() {
     this.router.navigate(['homework']);
-  }
-
-  onDestroy() {
-    // this.homeworkDetails = null;
-    console.log("working");
   }
 
 }

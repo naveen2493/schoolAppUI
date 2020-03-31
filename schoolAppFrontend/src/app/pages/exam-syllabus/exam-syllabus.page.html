@@ -1,38 +1,26 @@
 <ion-header>
   <ion-toolbar>
-   <ion-title>Exam-syllabus</ion-title>
+    <ion-title>Exam-syllabus</ion-title>
     <ion-buttons slot="end">
-      <ion-back-button defaultHref="members/home"></ion-back-button>
+      <ion-back-button defaultHref="syllabus-details"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="container">
-    <div class="row" *ngFor="let exam of exams">
-      <div *ngFor="let examName of objectKeys(exam)">
-        <div class="toggle mb-2">
-          <h3><span class="plus">+</span>{{examName}}</h3>
-          <div style="display: none;">
-            <div class="wpb_text_column wpb_content_element">
-              <div class="wpb_wrapper">
-                <table>
-                  <tr>
-                    <th>Subject</th>
-                    <th>Syllabus</th>
-                  
-                  </tr>
-                  <tr *ngFor="let subject of objectKeys(exam[examName])">
-                    <td>{{subject}}</td>
-                    <td>{{exam[examName][subject][0]}}</td>
-                   
-                  </tr>
-                </table>
-              </div>
+    <div *ngFor="let subject of subjects">
+      <div class="toggle mb-2">
+        <h3><span class="plus">+</span>{{subject}}</h3>
+        <div style="display: none;">
+          <div class="wpb_text_column wpb_content_element">
+            <div class="wpb_wrapper">
+              {{subjectSyllabus[subject]}}
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- </div> -->
   </div>
 </ion-content>

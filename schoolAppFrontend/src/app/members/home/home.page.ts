@@ -11,14 +11,17 @@ export class HomePage {
   constructor(private router: Router) {}
 
   goToPage(path) {
+    let elem = <HTMLElement>document.querySelector("ion-tab-button");
+    if (elem != null) {
+      elem.style.display = 'block';
+    }
     this.router.navigate([path]);
   }
 
-  ionViewWillEnter() {
-    document.querySelector('.home-tab').classList.add('tab-selected');
-  }
-
-  ionViewDidLeave() {
-    document.querySelector('.home-tab').classList.remove('tab-selected');
+  ngDoCheck() {
+    let elem = <HTMLElement>document.querySelector("ion-tab-button");
+    if (elem != null) {
+      elem.style.display = 'none';
+    }
   }
 }
