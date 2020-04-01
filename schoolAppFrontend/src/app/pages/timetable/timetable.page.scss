@@ -10,93 +10,31 @@ ion-title {
   padding-left: 4rem;
 }
 
-.col {
-  border: solid 1px rgb(9,24,45);
-  border-bottom-style: none;
-  border-right-style: none;
-}
-ion-grid{
-  position: relative;
-  padding:0;
-  top: calc(50% - 186px);
-  width: 90%;
-  border-radius: 20px;
-  // top:calc(50% - 185px)
+.days {
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  // border: 1px solid red;
 }
 
-ion-row.headerCol:first-child ion-col{
-  // height: 32px;
-  // border-radius: unset;
-  border: none;
-  color: rgb(2,0,36);
-  border-bottom: 1px solid #e8e3e3;
+.background {
+  background: gray;
 }
 
-ion-row:nth-child(even)  ion-col:nth-child(even){
-  // background-color: #c60929;
-  // color: white;
+.border {
+  border: 1px solid red;
 }
-ion-row:nth-child(even)  ion-col{
-  color: #c60929;
-}
-// ion-row:nth-child(odd)  ion-col:nth-child(even){
-//   background-color: #c60929;
-//   color: white;
-// }
-ion-row:nth-child(odd)  ion-col{
-  // background-color: #c60929;
-  // color: white;
-}
-ion-row:nth-child(odd)  ion-col:first-child,ion-row:nth-child(even)  ion-col:first-child{
- color: rgb(2,0,36);
-//  border-radius: unset;
- border: 1px solid #e8e3e3;
-
-}
-ion-row:nth-child(odd)  ion-col:nth-child(even){
-  background-color: white;
-  // color: #c60929;
-}
-ion-row.headerCol ion-col{
-  // background-color:  rgb(2,0,36) !important;
-  // color: white !important;
+.outer-border {
+  border: 1px solid red;
 }
 
-ion-row  ion-col:first-child{
-  background: white;
+.timing {
+  font-size: 9px;
 }
-
-ion-col{
-  // border:1px solid;
-  text-align: center;
-  text-align: center;
-    color: #c60929;
-    font-family: calibri;
-    // background: rgb(2,0,36);
-    // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(198,9,41,1) 35%, rgba(0,212,255,1) 100%);
-    background: white;
-    // border-color: linear-gradient(90deg, rgba(198,9,41,1) 46%, rgba(255,253,253,0.05926120448179273) 100%);
-    // border: 4px solid #bdacaf;
-    font-size: 20px;
-    // border-radius: 16px;
-    //  height: 100px;
-    div.highlightClass{
-      border: 3px solid;
-      border-radius: 50%;
-    }
-}
-
-.col:last-child {
-  border-right: solid 1px rgb(9,24,45);
-}
-
-.row:last-child .col {
-  border-bottom: solid 1px rgb(9,24,45);
-}
-ion-content{
-  --background: rgb(9,24,45);
-}
-.timetable-bg{
-  background-color: white;
-}
-.weekday,.hour{display: none;}
+ .time-table {
+   ion-col {
+     margin: 0px!important;
+     padding: 0px!important;
+   }
+ }
