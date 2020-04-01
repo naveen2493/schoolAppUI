@@ -31,6 +31,4 @@ export class HomeworkService extends HttpBase{
 
     return params;
   }
-
-  
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { enableRipple } from '@syncfusion/ej2-base';
 enableRipple(true);
 import * as $ from 'jquery';
+import { ExamDatesService } from '../../services/exam-dates.service';
 
 @Component({
   selector: 'app-exam-dates',
@@ -12,24 +13,42 @@ export class ExamDatesPage implements OnInit {
 
   objectKeys = Object.keys;
 
-  exams = [{ '1st Mid-Term': 
-                { 
-                  'Tamil': ['21-8-2019', '9 A.M'], 
-                  'English': ['22-8-2019', '9 A.M'], 
-                  'Maths': ['23-8-2019', '9 A.M'] }
-                 },
-          { '2nd Mid-Term': 
-                { 'Tamil': ['21-8-2019', '9 A.M'],
-                 'English': ['22-10-2019', '9 A.M'],
-                  'Maths': ['23-10-2019', '9 A.M']
-                 }
-          }
-        ];
+  exams = [];
 
-
-  constructor() { }
+  constructor(public examDatesService: ExamDatesService) { }
 
   ngOnInit() {
+
+    /*Service Respomse
+    this.examDatesService.get(this.examDatesService.getParams()).subscribe(
+      res => {
+        this.exams = res;
+      },
+      err => {
+        console.log("Errors", err);
+      }
+    );*/
+    
+    //Mock Response
+    let res =   [{
+      '1st Mid-Term':
+      {
+        'Tamil': ['21-8-2019', '9 A.M'],
+        'English': ['22-8-2019', '9 A.M'],
+        'Maths': ['23-8-2019', '9 A.M']
+      }
+    },
+    {
+      '2nd Mid-Term':
+      {
+        'Tamil': ['21-8-2019', '9 A.M'],
+        'English': ['22-10-2019', '9 A.M'],
+        'Maths': ['23-10-2019', '9 A.M']
+      }
+    }
+    ];
+
+    this.exams = res;
 
     $(document).ready(function () {
       $(".toggle h3").click(function (e) {

@@ -9,8 +9,8 @@
 
 <ion-content>
   <div class="container">
-    <div class="row" *ngFor="let exam of exams">
-      <div *ngFor="let examName of objectKeys(exam)">
+    <div class="row" *ngFor="let examMark of examMarks">
+      <div *ngFor="let examName of objectKeys(examMark)">
         <div class="toggle mb-2">
           <h3><span class="plus">+</span>{{examName}}</h3>
           <div style="display: none;">
@@ -22,10 +22,10 @@
                     <th>Mark</th>
                   
                   </tr>
-                  <tr *ngFor="let subject of objectKeys(exam[examName])">
+                  <tr *ngFor="let subject of objectKeys(examMark[examName])">
                     <td>{{subject}}</td>
-                    <td>{{exam[examName][subject][0]}}</td>
-                  
+                    <td>{{examMark[examName][subject]}}</td>
+                
                   </tr>
                
                 </table>

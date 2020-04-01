@@ -9,53 +9,53 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content  class="background-primary" [fullscreen]="true">
-    <ion-grid class="time-table" size="12">
-      <ion-row>
-        <ion-col class="days" *ngFor="let day of ['Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat']" size="2">
-          {{day}}
-        </ion-col>
-      </ion-row>
-      <ion-row class="outer-border">
-        <ion-col *ngFor="let subject of [1,2,3,4,5,6]" size="2">
-          <ion-row class="days border">
-            <span>Tam</span>
-            <span class="timing">9.30-10.15</span>
-          </ion-row>
-          <ion-row class="days border">
-            <span>Eng</span>
-            <span class="timing">10.15-11.00</span>
-          </ion-row>
-          <ion-row class="days border">
-            <span>Mat</span>
-            <span class="timing">11.10-11.55</span>
-          </ion-row>
-          <ion-row class="days border">
-            <span>Sci</span>
-            <span class="timing">11.55-12.40</span>
-          </ion-row>
-          <ion-row class="days border">
-            <span>Break</span>
-          </ion-row>
-          <ion-row class="days border">
-            <span>S.Sci</span>
-            <span class="timing">1.30-2.15</span>
-          </ion-row>
-          <ion-row class="days border">
-            <span>PET</span>
-            <span class="timing">2.15-3.00</span>
-          </ion-row>
-          <ion-row class="days border">
-            <p>M.I<br /></p>
-            <span class="timing">3.10-3.55</span>
-          </ion-row>
-          <ion-row class="days border">
-            <span>Tam</span>
-            <span class="timing">3.55-4.30</span>
-          </ion-row>
-        </ion-col>
-      </ion-row>
+<ion-content class="background-primary" [fullscreen]="true">
+  <ion-grid class="time-table" size="12">
+    <ion-row>
+      <ion-col class="days" *ngFor="let day of days" size="2">
+        {{day}}
+      </ion-col>
+    </ion-row>
+    <ion-row class="outer-border">
+      <ion-col *ngFor="let subject of periods" size="2">
+        <ion-row class="days border">
+          <span>{{subject[0]}}</span>
+          <span class="timing">{{periodTimings[0]}}</span>
+        </ion-row>
+        <ion-row class="days border">
+          <span>{{subject[1]}}</span>
+          <span class="timing">{{periodTimings[1]}}</span>
+        </ion-row>
+        <ion-row class="days border">
+          <span>{{subject[2]}}</span>
+          <span class="timing">{{periodTimings[2]}}</span>
+        </ion-row>
+        <ion-row class="days border">
+          <span>{{subject[3]}}</span>
+          <span class="timing">{{periodTimings[3]}}</span>
+        </ion-row>
+        <ion-row class="days border">
+          <span>Break</span>
+        </ion-row>
+        <ion-row class="days border">
+          <span>{{subject[4]}}</span>
+          <span class="timing">{{periodTimings[4]}}</span>
+        </ion-row>
+        <ion-row class="days border">
+          <span>{{subject[5]}}</span>
+          <span class="timing">{{periodTimings[5]}}</span>
+        </ion-row>
+        <ion-row class="days border">
+          <span>{{subject[6]}}</span>
+          <span class="timing">{{periodTimings[6]}}</span>
+        </ion-row>
+        <ion-row class="days border">
+          <span>{{subject[7]}}</span>
+          <span class="timing">{{periodTimings[7]}}</span>
+        </ion-row>
+      </ion-col>
+    </ion-row>
 
-   
+
   </ion-grid>
 </ion-content>

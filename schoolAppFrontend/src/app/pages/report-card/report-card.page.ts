@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { ReportCardService } from '../../services/report-card.service';
 
 @Component({
   selector: 'app-report-card',
@@ -9,57 +10,78 @@ import * as $ from 'jquery';
 export class ReportCardPage implements OnInit {
   objectKeys = Object.keys;
 
-  exams = [
-    { '1st Mid-Term': 
-          { 
-            'Tamil': [80], 
-            'English': [82], 
-            'Maths': [99] ,
-            'Total': [261],
-            'Rank':[15]
-          },
-       
-    },
-  { '2nd Mid-Term': 
-            {  'Tamil': [33], 
-            'English': [99], 
-            'Maths': [52] ,
-            'Total': [184],
-            'Rank':[16]
-            }
-  },
-  { 'Quarterly Exam': 
-  { 
-    'Tamil': [71], 
-    'English': [41], 
-    'Maths': [66] ,
-    'Total': [178],
-            'Rank':[19]
-   }
-  },
+  examMarks = [];
 
-{ '2nd Mid-Term': 
-    {  'Tamil': [60], 
-    'English': [82], 
-    'Maths': [99] ,
-    'Total': [241],
-            'Rank':[18]
-    }
-   
-},
-{ 'Half Yearly': 
-    {  'Tamil': [50], 
-    'English': [42], 
-    'Maths': [79] ,
-    'Total': [171],
-            'Rank':[20]
-    }
-  }
-];
-
-  constructor() { }
+  constructor(public reportCardService: ReportCardService) { }
 
   ngOnInit() {
+    /*Service Response
+    this.reportCardService.get(this.reportCardService.getParams()).subscribe(
+      res => {
+        this.examsMarks = res;
+      },
+      err => {
+        console.log("Errors", err);
+      }
+    );*/
+
+    let res = [
+      {
+        '1st Mid-Term':
+        {
+          'Tamil': 80,
+          'English': 82,
+          'Maths': 99,
+          'Total': 261,
+          'Rank': 15
+        },
+
+      },
+      {
+        '2nd Mid-Term':
+        {
+          'Tamil': 33,
+          'English': 99,
+          'Maths': 52,
+          'Total': 184,
+          'Rank': 16
+        }
+      },
+      {
+        'Quarterly Exam':
+        {
+          'Tamil': 71,
+          'English': 41,
+          'Maths': 66,
+          'Total': 178,
+          'Rank': 19
+        }
+      },
+
+      {
+        '2nd Mid-Term':
+        {
+          'Tamil': 60,
+          'English': 82,
+          'Maths': 99,
+          'Total': 241,
+          'Rank': 18
+        }
+
+      },
+      {
+        'Half Yearly':
+        {
+          'Tamil': 50,
+          'English': 42,
+          'Maths': 79,
+          'Total': 171,
+          'Rank': 20
+        }
+      }
+    ];
+    this.examMarks = res;
+
     $(document).ready(function () {
       $(".toggle h3").click(function (e) {
         console.log("Gettttttt")
@@ -87,8 +109,8 @@ export class ReportCardPage implements OnInit {
       });
     });
   }
-  
- 
 
- 
+
+
+
 }
