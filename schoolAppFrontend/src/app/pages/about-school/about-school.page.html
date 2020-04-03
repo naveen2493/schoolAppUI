@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>About School</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="members/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="about" *ngFor="let schoolDetail of schoolDetails">
+    <h4>{{schoolDetail.title}}</h4>
+    <div *ngIf="schoolDetail.images">
+      <ion-row *ngFor="let image of schoolDetail.images">
+        <img src={{image}}>
+      </ion-row>
+    </div>
+    <p *ngFor="let detail of schoolDetail.details">{{detail}}</p>
+  </div>
+</ion-content>

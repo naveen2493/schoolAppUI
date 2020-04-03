@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Fees Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="members/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <table align="center">
+    <tr *ngFor="let fee of objectKeys(feesDetails)">
+       <td>{{fee}}</td>
+       <td>Rs.{{feesDetails[fee]}}/-</td>
+    </tr>
+    <tr class="total">
+      <td>Total</td>
+      <td>Rs.{{total}}/-</td>
+   </tr>
+ </table>
+
+</ion-content>

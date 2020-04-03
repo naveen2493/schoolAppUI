@@ -81,6 +81,22 @@ const routes: Routes = [
   {
     path: 'syllabus-details',
     loadChildren: () => import('./pages/syllabus-details/syllabus-details.module').then( m => m.SyllabusDetailsPageModule)
+  },
+  {
+    path: 'about-school',
+    loadChildren: () => import('./pages/about-school/about-school.module').then( m => m.AboutSchoolPageModule)
+  },
+  {
+    path: 'feedback',
+    loadChildren: () => import('./pages/feedback/feedback.module').then( m => m.FeedbackPageModule)
+  },
+  {
+    path: 'fees-details',
+    loadChildren: () => import('./pages/fees-details/fees-details.module').then( m => m.FeesDetailsPageModule)
+  },
+  {
+    path: 'teachers-details',
+    loadChildren: () => import('./pages/teachers-details/teachers-details.module').then( m => m.TeachersDetailsPageModule)
   }
 ];
 @NgModule({

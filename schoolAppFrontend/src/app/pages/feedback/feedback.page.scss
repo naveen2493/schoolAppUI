@@ -1,0 +1,28 @@
+ion-title {
+    text-align: center;
+    padding-left: 4rem;
+}
+
+input {
+    width: 90%;
+    height: 3rem;
+    border: 2px solid black;
+}
+
+textarea {
+    width: 90%;
+    height: 10rem;
+    border: 2px solid black;
+}
+
+.feedback-block {
+    margin: 1rem;
+}
+
+.errors {
+    color: red;
+}
+
+ion-button {
+    margin-top: 1rem;;
+}

@@ -1,0 +1,24 @@
+ion-title {
+    text-align: center;
+    padding-left: 4rem;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    margin-top: 2rem;
+    width: 90%;
+}
+
+td {
+    text-align: center;
+    height: 4rem;
+}
+
+.total {
+    font-weight: 600;
+    margin-top: 3rem;
+}

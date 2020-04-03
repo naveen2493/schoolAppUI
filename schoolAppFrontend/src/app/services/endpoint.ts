@@ -41,5 +41,21 @@ export class Endpoint {
     return this.baseUrl + 'reportCard';
   }
 
+  get aboutSchool() {
+    return this.baseUrl + 'about-school';
+  }
+
+  get feedback() {
+    return this.baseUrl + 'feedback';
+  }
+
+  get teachersDetails() {
+    return this.baseUrl + 'teachers-details';
+  }
+
+  get schoolFees() {
+    return this.baseUrl + 'school-fees';
+  }
+
 
 }

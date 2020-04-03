@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Feedback</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="members/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="feedback-block">
+    <form [formGroup]="feedbackForm" (ngSubmit)="feedBackFormData()">
+    <h5>Title</h5>
+    <input type="text" formControlName="title"><br><br>
+    <div *ngIf="title.errors?.required && (title.dirty || title.touched)">
+      <div class="errors" *ngIf="title.errors.required">First Name is requuird</div>
+    </div>
+    <h5>Write your feedback here</h5>
+    <textarea formControlName="feedback" rows="4" cols="50">
+    </textarea>
+    <div *ngIf="feedback.errors?.required && (feedback.dirty || feedback.touched)">
+      <div class="errors" *ngIf="feedback.errors.required">First Name is requuird</div>
+    </div>
+    <ion-button color="success" type="submit" [disabled]="!feedbackForm.valid">Submit</ion-button>
+    <!-- <button ion-button type="submit" [disabled]="!feedbackForm.valid">Submit</button> -->
+  </form>
+  </div>
+</ion-content>
