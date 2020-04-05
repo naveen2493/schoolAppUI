@@ -24,7 +24,7 @@ main{
 }
 
 .menu {
-	background: #03A9F4;
+	background: #fff;
 	height:100vh;
 	position:fixed;
 	top:0;
@@ -93,7 +93,7 @@ main{
 			height:50px;
 			position:absolute;
 			left:100%;
-			background: #03A9F4;
+			background: #fff;
 			
 			&:before, &:after {
 				// content:'';
@@ -293,5 +293,5 @@ ion-content {
 }
 
 .toolbar-background {
-	background: #03A9F4;
+	background: #fff;
 }
