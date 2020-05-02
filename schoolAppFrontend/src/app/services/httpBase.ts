@@ -55,4 +55,15 @@ export abstract class HttpBase {
         });
     }
 
+
+  put(data,httpParams?):Observable<any>{
+    let head = new HttpHeaders();
+    // if (this.isAuthenticatedEndpoint) {
+    //   head = head.set("Authorization", `Token ${this.token}`);
+    // }
+    return this.httpClient.put(this.endpoint, data, {
+      headers: head
+    });
+  }
+
 }

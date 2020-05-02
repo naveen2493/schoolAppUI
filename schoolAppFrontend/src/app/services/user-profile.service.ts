@@ -3,10 +3,11 @@ import { HttpBase } from './httpBase';
 import { Endpoint } from './endpoint';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class UserprofileService extends HttpBase{
+export class UserProfileService extends HttpBase{
 
   constructor(public endPoint: Endpoint, public httpClient: HttpClient) {
     super(httpClient);
@@ -17,7 +18,7 @@ export class UserprofileService extends HttpBase{
    }
 
    get endpoint() {
-     return this.endPoint.fetchUserDetails;
+     return this.endPoint.userProfile;
    }
 
    getParams(httpParams?) {

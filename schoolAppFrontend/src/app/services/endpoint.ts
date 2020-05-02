@@ -57,5 +57,9 @@ export class Endpoint {
     return this.baseUrl + 'school-fees';
   }
 
+  get userProfile() {
+    return this.baseUrl + 'user-profile';
+  }
+
 
 }

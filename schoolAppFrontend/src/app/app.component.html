@@ -1,7 +1,7 @@
 <ion-app>
   <!-- <ion-menu> -->
   <nav id="menu-bar" class="menu" tabindex="0">
-    <div class="smartphone-menu-trigger">
+    <div (click)="openMenu()" class="smartphone-menu-trigger">
       <ion-icon class="menu-bar" name="menu-outline"></ion-icon>
     </div>
     <h2 class="username">Welcome {{user.username}}</h2>
@@ -9,41 +9,108 @@
     <div class="circle">
       <div class="ring">
         <ion-icon class="menuItem" (click)="logout()" name="log-out-outline"></ion-icon>
-        <ion-icon class="menuItem" name="camera"></ion-icon>
-        <ion-icon class="menuItem" name="key"></ion-icon>
-        <ion-icon class="menuItem" name="call"></ion-icon>
-        <ion-icon class="menuItem" name="mail"></ion-icon>
+        <ion-icon class="menuItem" (click)="changeUserDetail('address')" name="home"></ion-icon>
+        <ion-icon class="menuItem" (click)="changeUserDetail('password')" name="key"></ion-icon>
+        <ion-icon class="menuItem" (click)="changeUserDetail('phone')" name="call"></ion-icon>
+        <ion-icon class="menuItem" (click)="changeUserDetail('email')" name="mail"></ion-icon>
       </div>
       <header class="center" (click)="editProfile()">
         <img src="../assets/student.jpeg" />
       </header>
     </div>
+    <div class="row" *ngIf="editUser; else showDetails">
+      <div [ngSwitch]="editUserProfile">
+      <ion-row class="edit-title">
+        <ion-col size="10"><h5>Edit UserProfile</h5></ion-col>
+        <ion-col size="2"><h5><ion-icon (click)="closeEdit()" name="close-outline"></ion-icon></h5></ion-col>
+      </ion-row>
+      <div *ngSwitchCase="'phone'" class="border">
+        <p>Change Phone No</p>
+        <ion-row class="text-center">
+          <input #phone placeholder="Enter Phone No" value={{user.phone}}>
+        </ion-row>
+        <ion-row class="text-center">
+          <ion-button (click)="submitPhone(phone.value)" expand="block">Confirm</ion-button>
+        </ion-row>
+      </div>
+      <div *ngSwitchCase="'address'" class="border">
+          <p>Change Address</p>
+        <ion-row class="text-center">
+          <textarea #address placeholder="" value={{user.address}}></textarea>
+        </ion-row>
+        <ion-row class="text-center">
+          <ion-button (click)="submitAddress(address.value)" expand="block">Confirm</ion-button>
+        </ion-row>
+      </div>
+      <div *ngSwitchCase="'password'" class="border">
+        <p>Change Password</p>
+        <ion-row class="no-margin">New Password</ion-row>
+        <ion-row class="text-center">
+          <input #newPassword placeholder="Change Password">
+        </ion-row>
+        <ion-row class="no-margin">Confirm Password</ion-row>
+        <ion-row class="text-center">
+          <input #confirmPassword placeholder="Confirm Password">
+        </ion-row>
+        <span class="error-message" *ngIf="newPassword.value !== confirmPassword.value">*Password not matched</span>
+        <span class="error-message" *ngIf="lengthError">*Should be more than 5 letter</span>
+        <ion-row class="text-center">
+          <ion-button (click)="submitPassword(newPassword.value, confirmPassword.value)" expand="block">Confirm
+          </ion-button>
+        </ion-row>
+      </div>
+      <div *ngSwitchCase="'email'" class="border">
+        <p>Change Mail</p>
+        <ion-row class="text-center">
+          <input #email placeholder="Enter Mail ID" value={{user.email}}>
+        </ion-row>
+        <ion-row class="text-center">
+          <ion-button (click)="submitMail(email.value)" expand="block">Confirm</ion-button>
+        </ion-row>
+      </div>
+    </div>
+    </div>
 
-    <ion-row>
-      <ion-col size=2>
-        <ion-icon name="person-outline"></ion-icon>
-      </ion-col>
-      <ion-col>{{user.student_name}}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size=2>
-        <ion-icon name="bookmarks-outline"></ion-icon>
-      </ion-col>
-      <ion-col>{{user.class}}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size=2>
-        <ion-icon name="call-outline"></ion-icon>
-      </ion-col>
-      <ion-col>{{user.phone}}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size=2>
-        <ion-icon name="mail-outline"></ion-icon>
-      </ion-col>
-      <ion-col>{{user.email}}</ion-col>
-    </ion-row>
+    <ng-template #showDetails>
+      <ion-row>
+        <ion-col size=2>
+          <ion-icon name="person-outline"></ion-icon>
+        </ion-col>
+        <ion-col>{{user.student_name}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size=2>
+          <ion-icon name="bookmarks-outline"></ion-icon>
+        </ion-col>
+        <ion-col>{{user.class}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size=2>
+          <ion-icon name="call-outline"></ion-icon>
+        </ion-col>
+        <ion-col>{{user.phone}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size=2>
+          <ion-icon name="mail-outline"></ion-icon>
+        </ion-col>
+        <ion-col>{{user.email}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size=2>
+          <ion-icon name="water-outline"></ion-icon>
+        </ion-col>
+        <ion-col>{{user.blood}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size=2>
+          <ion-icon name="home-outline"></ion-icon>
+        </ion-col>
+        <ion-col>{{user.address}}</ion-col>
+      </ion-row>
+    </ng-template>
   </nav>
+  <!-- </ion-menu> -->
   <ion-router-outlet id="main">
   </ion-router-outlet>
   <ion-tabs>
@@ -54,16 +121,9 @@
             <ion-icon name="home-outline"></ion-icon>
           </ion-row>
           <ion-row>
-            <!-- <ion-label>Home</ion-label> -->
           </ion-row>
         </div>
       </ion-tab-button>
     </div>
-    <!-- <ion-tab-bar [translucent]="true" class="tabs-bar" slot="bottom">
-        <ion-tab-button class="home-tab tab-selected" (click)="addClass()" tab="members/home">
-          <ion-icon name="home-outline"></ion-icon>
-          <ion-label>Home</ion-label>
-        </ion-tab-button>
-      </ion-tab-bar> -->
   </ion-tabs>
 </ion-app>
