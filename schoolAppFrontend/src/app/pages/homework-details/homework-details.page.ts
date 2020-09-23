@@ -36,7 +36,7 @@ export class HomeworkDetailsPage implements OnInit {
       }
     });
     if(Object.keys(this.params).length === 0) {
-      this.date = "03/14/2020";
+      this.date = "09/23/2020";
       this.params = {
         'date': this.date,
         'class': '5',

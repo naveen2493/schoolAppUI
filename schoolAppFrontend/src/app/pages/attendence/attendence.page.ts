@@ -66,52 +66,32 @@ export class AttendencePage implements OnInit {
 
     let res = [{
       '1/1/2020': "New Year's Day",
-      '15/1/2020': 'Pongal',
-      '16/1/2020': 'Thiruvalluvar Day',
-      '17/1/2020': 'Uzhavar Thirunal',
-      '26/1/2020': 'Republic Day',
-      '10/4/2020': 'Good Friday',
-      '14/4/2020': 'Tamil New Year',
-      '1/5/2020': 'May Day',
-      '1/8/2020': 'Bakrid / Eid al Adha',
-      '15/8/2020': 'Independence Day',
-      '22/8/2020': 'Ganesh Chaturthi',
-      '30/8/2020': 'Muharram',
-      '2/10/2020': 'Gandhi Jayanti',
-      '25/10/2020': 'Ayutha Poojai',
-      '26/10/2020': 'Vijaya Dashami',
-      '30/10/2020': 'Eid e Milad',
-      '14/11/2020': 'Deepavali',
-      '25/12/2020': '	Christmas Day'
+      '1/15/2020': 'Pongal',
+      '1/16/2020': 'Thiruvalluvar Day',
+      '1/17/2020': 'Uzhavar Thirunal',
+      '1/26/2020': 'Republic Day',
+      '4/10/2020': 'Good Friday',
+      '4/14/2020': 'Tamil New Year',
+      '5/1/2020': 'May Day',
+      '8/1/2020': 'Bakrid / Eid al Adha',
+      '8/15/2020': 'Independence Day',
+      '8/22/2020': 'Ganesh Chaturthi',
+      '8/30/2020': 'Muharram',
+      '10/2/2020': 'Gandhi Jayanti',
+      '10/25/2020': 'Ayutha Poojai',
+      '10/26/2020': 'Vijaya Dashami',
+      '10/30/2020': 'Eid e Milad',
+      '11/14/2020': 'Deepavali',
+      '12/25/2020': '	Christmas Day'
     },
     {
-      "24/1/2020": 'Feeling not well leave',
-      "18/1/2020": 'Feeling not well leave',
-      "24/2/2020": 'Feeling not well leave',
-      "24/3/2020": 'Feeling not well leave',
-      "24/4/2020": 'Feeling not well leave',
-      "24/5/2020": 'Feeling not well leave',
-      "24/6/2020": 'Feeling not well leave',
-      "24/7/2020": 'Feeling not well leave',
-      "24/8/2020": 'Feeling not well leave',
-      "24/9/2020": 'Feeling not well leave',
-      "24/10/2020": 'Feeling not well leave',
-      "24/11/2020": 'Feeling not well leave',
-      "24/12/2020": 'Feeling not well leave'
+      "6/24/2020": 'Feeling not well leave',
+      "7/24/2020": 'Feeling not well leave',
+      "8/24/2020": 'Feeling not well leave',
+      "9/22/2020": 'Feeling not well leave',
     },
     {
-      "20/1/2020": 'Feeling not well leave',
-      "20/2/2020": 'Feeling not well leave',
-      "20/3/2020": 'Feeling not well leave',
-      "20/4/2020": 'Feeling not well leave',
-      "20/5/2020": 'Feeling not well leave',
-      "20/6/2020": 'Feeling not well leave',
-      "20/7/2020": 'Feeling not well leave',
-      "20/8/2020": 'Feeling not well leave',
-      "20/9/2020": 'Feeling not well leave',
-      "22/1/2020": 'Feeling not well leave',
-      "20/11/2020": 'Feeling not well leave',
-      "20/12/2020": 'Feeling not well leave'
+      "9/21/2020": 'Feeling not well leave',
     }];
 
     this.govt_holidays = res[0];
@@ -123,7 +103,7 @@ export class AttendencePage implements OnInit {
     this.partialLeavesDates = Object.keys(this.partialLeaves)
     this.no_of_leaves = this.leaveDates.length + (this.partialLeavesDates.length / 2);
 
-    for (var d = new Date(2019, 5, 1); d <= now; d.setDate(d.getDate() + 1)) {
+    for (var d = new Date(2020, 6, 1); d <= now; d.setDate(d.getDate() + 1)) {
 
       if (d.getDay() !== 6 && d.getDay() !== 0) {
         this.working_days++;

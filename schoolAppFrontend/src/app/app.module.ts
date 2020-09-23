@@ -11,7 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IonicStorageModule } from '@ionic/storage';
+// Due to this error node_modules/@ionic/storage/storage.d.ts:113:9 - error TS1086: An accessor cannot be declared in an ambient context.get driver(): string | null;
+// import { IonicStorageModule } from '@ionic/storage';
 import { LoginPage } from './pages/login/login.page';
 
 
@@ -25,7 +26,8 @@ import { LoginPage } from './pages/login/login.page';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot()],
+    // IonicStorageModule.forRoot()
+  ],
   providers: [
     StatusBar,
     SplashScreen,
