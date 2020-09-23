@@ -32,14 +32,18 @@ export class FeedbackPage implements OnInit {
       feedback: this.feedbackForm.value.feedback
     }
 
-    this.feedbackService.post(params).subscribe(
-      res => {
-        console.log("Response", res);
-      },
-      err => {
-        console.log("Errors", err);
-      }
-    )
+    this.feedbackForm.reset();
+
+    // Service response
+    // this.feedbackService.post(params).subscribe(
+    //   res => {
+    //     console.log("Response", res);
+    //     this.feedbackForm.reset();
+    //   },
+    //   err => {
+    //     console.log("Errors", err);
+    //   }
+    // );
   }
 
 }

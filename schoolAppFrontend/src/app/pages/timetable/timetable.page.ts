@@ -57,12 +57,12 @@ export class TimetablePage {
 
     //Mock Response
     let res = [[
-      { 'Mon': ['Tam', 'Eng', 'Mat', 'Sci', 'S.S', 'PET', 'M.I', "Tam"] },
-      { 'Tue': ['Tam', 'Eng', 'Mat', 'Sci', 'S.S', 'PET', 'M.I', "Tam"] },
-      { 'Wed': ['Tam', 'Eng', 'Mat', 'Sci', 'S.S', 'PET', 'M.I', "Tam"] },
-      { 'Thr': ['Tam', 'Eng', 'Mat', 'Sci', 'S.S', 'PET', 'M.I', "Tam"] },
-      { 'Fri': ['Tam', 'Eng', 'Mat', 'Sci', 'S.S', 'PET', 'M.I', "Tam"] },
-      { 'Sat': ['Tam', 'Eng', 'Mat', 'Sci', 'S.S', 'PET', 'M.I', "Tam"] }
+      { 'Mon': ['Tam', 'Eng', 'Mat', 'Sci', 'S.Sci', 'PET', 'Eng', "Tam"] },
+      { 'Tue': ['Tam', 'Eng', 'Mat', 'Sci', 'S.Sci', 'PET', 'Eng', "Tam"] },
+      { 'Wed': ['Tam', 'Eng', 'Mat', 'Sci', 'S.Sci', 'PET', 'Eng', "Tam"] },
+      { 'Thr': ['Tam', 'Eng', 'Mat', 'Sci', 'S.Sci', 'PET', 'Eng', "Tam"] },
+      { 'Fri': ['Tam', 'Eng', 'Mat', 'Sci', 'S.Sci', 'PET', 'Eng', "Tam"] },
+      { 'Sat': ['Tam', 'Eng', 'Mat', 'Sci', 'S.Sci', 'PET', 'Eng', "Tam"] }
     ],
     ['9.30-10.15', '10.15-11.00', '11.10-11.55', '11.55-12.40', '1.30-2.15', '2.15-3.00', '3.10-3.55', '3.55-4.30']
     ];
