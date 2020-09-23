@@ -1,10 +1,11 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Platform } from '@ionic/angular';
+import { Platform, AlertController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
 import * as $ from 'jquery';
+import { Location } from '@angular/common';
 
 
 
@@ -24,6 +25,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private authenticationService: AuthenticationService,
+    private _location: Location,
+    public alertController: AlertController,
     private router: Router
   ) {
     this.initializeApp();
@@ -83,6 +86,55 @@ export class AppComponent {
 
       }
     });
+
+    this.platform.backButton.subscribeWithPriority(10, () => {
+      console.log('Back press handler!');
+      if (this._location.isCurrentPathEqualTo('/home')) {
+        // Show Exit Alert!
+        console.log('Show Exit Alert!');
+        this.showExitConfirm();
+        // processNextHandler();
+      } else {
+        // Navigate to back page
+        console.log('Navigate to back page');
+        this._location.back();
+      }
+    });
+
+    this.platform.backButton.subscribeWithPriority(5, () => {
+      console.log('Handler called to force close!');
+      this.alertController.getTop().then(r => {
+        if (r) {
+          navigator['app'].exitApp();
+        }
+      }).catch(e => {
+        console.log(e);
+      })
+    });
+
+  }
+
+  showExitConfirm() {
+    this.alertController.create({
+      header: 'Exit',
+      message: 'Do you want to close the app?',
+      backdropDismiss: false,
+      buttons: [{
+        text: 'No',
+        role: 'cancel',
+        handler: () => {
+          console.log('Application exit prevented!');
+        }
+      }, {
+        text: 'Exit',
+        handler: () => {
+          navigator['app'].exitApp();
+        }
+      }]
+    })
+      .then(alert => {
+        alert.present();
+      });
   }
 
   editProfile() {
