@@ -97,7 +97,12 @@ const routes: Routes = [
   {
     path: 'teachers-details',
     loadChildren: () => import('./pages/teachers-details/teachers-details.module').then( m => m.TeachersDetailsPageModule)
+  },
+  {
+    path: 'events-details',
+    loadChildren: () => import('./pages/events-details/events-details.module').then( m => m.EventsDetailsPageModule)
   }
+
 ];
 @NgModule({
   imports: [

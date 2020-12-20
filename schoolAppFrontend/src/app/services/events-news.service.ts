@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class EventsNewsService extends HttpBase{
+export class EventsNewsService extends HttpBase {
 
   constructor(public endPoint: Endpoint, public httpClient: HttpClient) {
     super(httpClient);
@@ -24,5 +24,6 @@ export class EventsNewsService extends HttpBase{
     let params = httparams;
     return params;
   }
+
 }
 

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class Endpoint {
 
-  public baseUrl = 'http://localhost:5001/';
+  public baseUrl = 'http://localhost:4500/';
 
   constructor() { }
 
@@ -22,7 +22,7 @@ export class Endpoint {
   }
 
   get eventsNewsDetails() {
-    return this.baseUrl + 'event-news';
+    return this.baseUrl + 'event/list';
   }
 
   get examSyllabus() {

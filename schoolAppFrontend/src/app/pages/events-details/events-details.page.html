@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Event Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="eventspage"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{event.event_title}}</ion-card-title>
+      <ion-card-subtitle>{{event.event_date}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row *ngFor="let image of event.event_image_path">
+        <img src="{{image}}" />
+      </ion-row>
+      <ion-row>
+        {{event.event_description}}
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

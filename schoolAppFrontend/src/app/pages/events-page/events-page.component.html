@@ -8,22 +8,21 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content  class="background-primary" [fullscreen]="true">
-  <div class="event-card"  *ngFor="let item of eventData; let i = index">
-    <p>
-      {{item.event}}
-      <br><span>{{item.eventTiming}}</span>
-    </p>
-    <!-- <img src="../../../assets/11-119684_calendar-empty-ultrathin-page-comments-calendar-icon-line-png.png"> -->
-    <span class="cal"><span class="day">{{item.eventDate}}</span> <br><span class="year">{{item.eventMonthYear}}</span> </span>
-    <span>{{item.eventType}}</span>
-    <ion-icon name="images"></ion-icon>
-    <!-- <span class="imgCount">10</span> -->
-  </div>
-  
+<ion-content class="background-primary" [fullscreen]="true">
 
-  
+  <ion-card (click)="openEventDetails(event)" *ngFor="let event of eventsData; let i = index">
+    <ion-card-header>
+      <ion-row>
+        <ion-col size="10">
+          <ion-card-title>{{event.event_title}}</ion-card-title>
+          <ion-card-subtitle>{{event.event_date}}</ion-card-subtitle>
+        </ion-col>
+        <ion-col size="2">
+          <img width="50px" height="50px" src="{{event.event_image_path[0]}}" />
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+
+  </ion-card>
+
 </ion-content>
-
-
-

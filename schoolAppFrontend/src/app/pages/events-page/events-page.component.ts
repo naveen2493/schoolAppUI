@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { EventsNewsService } from '../../services/events-news.service';
 
 @Component({
@@ -8,52 +9,30 @@ import { EventsNewsService } from '../../services/events-news.service';
 })
 export class EventsPageComponent implements OnInit {
   panelOpenState = false;
-  eventData = [];
-  constructor(public eventsNewsService: EventsNewsService) { }
+  eventsData = [];
+  constructor(public eventsNewsService: EventsNewsService, public router: Router) { }
 
   ngOnInit() {
-    /*Service Response
-    this.eventsNewsService.get(this.eventsNewsService.getParams()).subscribe(
+    // Service Response
+    this.eventsNewsService.get().subscribe(
       res => {
-        this.eventData = res;
+        // debugger;
+        this.eventsData = res.eventsData;
       },
       err => {
         console.log("Errors", err);
       }
-    );*/
+    );
 
-    // Mock Response
-    let res = [
-      {
-        "event": "Diwali",
-        "eventTiming": "9.00 AM to 12.00 PM",
-        "eventDate": "12",
-        "eventMonthYear": "Nov 2020",
-        "eventType": "Events"
-      }, {
-        "event": "Pongal",
-        "eventTiming": "9.00 AM to 12.00 PM",
-        "eventDate": "14",
-        "eventMonthYear": "Jan 2020",
-        "eventType": "Events"
-      },
-      {
-        "event": "TAMIL NEW YEAR",
-        "eventTiming": "9.00 AM to 12.00 PM",
-        "eventDate": "14",
-        "eventMonthYear": "Apr 2020",
-        "eventType": "Events"
-      },
-      {
-        "event": "TOMORROW 3rd March 2020 (TUESDAY) WILL BE A HALF WORKING DAY FOR STUDENTS FROM JR.K.G TO GRADE XI",
-        "eventTiming": "9.00 AM to 12.00 PM",
-        "eventDate": "12",
-        "eventMonthYear": "Apr 2020",
-        "eventType": "NOTICE"
       }
-    ];
 
-    this.eventData = res;
+  openEventDetails(event) {
+    let selectedEvent: NavigationExtras = {
+      state: {
+        event: event
+      }
+    };
+    this.router.navigate(['/events-details'], selectedEvent);
   }
 
 }
