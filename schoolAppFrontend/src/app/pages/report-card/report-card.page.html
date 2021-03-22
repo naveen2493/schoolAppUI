@@ -9,11 +9,11 @@
 
 <ion-content>
   <div class="container">
-    <div class="row" *ngFor="let examMark of examMarks">
+    <div class="row" *ngFor="let examMark of examMarks; let i = index">
       <div *ngFor="let examName of objectKeys(examMark)">
         <div class="toggle mb-2">
-          <h3><span class="plus">+</span>{{examName}}</h3>
-          <div style="display: none;">
+          <h3 id="{{'term'+i}}" (click)="toggle(i)"><span class="plus" id="{{'plus'+i}}">+</span>{{examName}}</h3>
+          <div id="{{'exam-details-'+i}}" style="display: none;">
             <div class="wpb_text_column wpb_content_element">
               <div class="wpb_wrapper">
                 <table>
@@ -25,9 +25,7 @@
                   <tr *ngFor="let subject of objectKeys(examMark[examName])">
                     <td>{{subject}}</td>
                     <td>{{examMark[examName][subject]}}</td>
-                
                   </tr>
-               
                 </table>
               </div>
             </div>

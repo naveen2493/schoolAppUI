@@ -26,11 +26,11 @@ export class Endpoint {
   }
 
   get examSyllabus() {
-    return this.baseUrl + 'examSyllabus';
+    return this.baseUrl + 'exam-syllabus/';
   }
 
   get examDates() {
-    return this.baseUrl + 'examDates';
+    return this.baseUrl + 'exam-date/';
   }
 
   get timeTable() {
@@ -54,7 +54,7 @@ export class Endpoint {
   }
 
   get schoolFees() {
-    return this.baseUrl + 'school-fees';
+    return this.baseUrl + 'school-fees/';
   }
 
   get userProfile() {

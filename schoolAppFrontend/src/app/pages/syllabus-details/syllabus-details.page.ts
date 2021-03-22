@@ -12,81 +12,24 @@ export class SyllabusDetailsPage implements OnInit {
 
   objectKeys = Object.keys;
 
+  exams = [];
+  examList = ["Mid-Term", "Mid-Term"];
+  user = { username: "Sadasivam", student_name: "Naveen", class: "10", phone: "9952267549", blood: 'O+ve', address: '28/23 Pandarinathan st, Ammapet, salem-636003.', email: "sadasivam@gmail.com", password: "qwerty123", batch: "2020" }
+
   syllabusDetails = [];
 
   constructor(public router: Router, public route: ActivatedRoute, public examSyllabusService: ExamSyllabusService) { }
 
   ngOnInit() {
-    /*Service Response
-    this.examSyllabusService.get(this.examSyllabusService.getParams()).subscribe(
-      res => {
-        this.syllabusDetails = res;
-      },
-      err => {
-
-      }
-    );*/
-
-    // Mock Response
-    let res = [
-      {
-        '1st Mid-Term':
-        {
-          'Tamil': 'Lesson 1 to Lesson 3. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.',
-          'English': '3 poetry , 2 stories. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.',
-          'Maths': '5 probelmas from 1 st unit. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.'
-        }
-      },
-      {
-        '2nd Mid-Term':
-        {
-          'Tamil': 'Lesson 1 to Lesson 3. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.',
-          'English': '3 poetry , 2 stories. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.',
-          'Maths': '5 probelmas from 1 st unit. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.'
-        }
-      },
-      {
-        'Quarterly Exam':
-        {
-          'Tamil': 'Lesson 1 to Lesson 3. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.',
-          'English': '3 poetry , 2 stories. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.',
-          'Maths': '5 probelmas from 1 st unit. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.'
-        }
-      },
-  
-      {
-        '2nd Mid-Term':
-        {
-          'Tamil': 'Lesson 1 to Lesson 3. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.',
-          'English': '3 poetry , 2 stories. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.',
-          'Maths': '5 probelmas from 1 st unit. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.'
-        }
-  
-      },
-      {
-        'Half Yearly':
-        {
-          'Tamil': 'Lesson 1 to Lesson 3. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.',
-          'English': '3 poetry , 2 stories. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.',
-          'Maths': '5 probelmas from 1 st unit. Tamil Nadu board of education has published all the syllabus for the session 2020 on the official website- www.dge.tn.gov.in. The syllabus is also made available here below for your ease and to download. SSLC syllabus is available in two medium. One in Tamil medium and another in English medium.'
-        }
-      }
-    ];
-
-    this.syllabusDetails = res;
   }
 
   goToDetails(exam) {
-    this.syllabusDetails.forEach(syllabusDetail => {
-      if (Object.keys(syllabusDetail)[0] === exam) {
-        let selectedExam: NavigationExtras = {
-          state: {
-            date: syllabusDetail[exam]
-          }
-        };
-        this.router.navigate(['/exam-syllabus'], selectedExam);
+    let selectedExam: NavigationExtras = {
+      state: {
+        data: exam
       }
-    });
+    };
+    this.router.navigate(['/exam-syllabus'], selectedExam);
   }
 
 }

@@ -81,36 +81,24 @@ export class ReportCardPage implements OnInit {
       }
     ];
     this.examMarks = res;
-
-    $(document).ready(function () {
-      $(".toggle h3").click(function (e) {
-        console.log("Gettttttt")
-        e.preventDefault();
-        if ($(this).closest("div").find("div:first").css("display") == "none") {
-          $(this).closest("div").find("div:first").show();
-          $(this).closest("div").find(".plus").text("-");
-          $(this).closest("div").find(".plus").css("background", "#888888");
-          $(this).closest("div").find(".plus").css("color", "#fff");
-          $(this).closest("div").find("h3").css("border-top", "2px solid var(--ion-color-primary)");
-          $(this).closest("div").find("h3").css("border-left", "2px solid var(--ion-color-primary)");
-          $(this).closest("div").find("h3").css("border-right", "2px solid var(--ion-color-primary)");
-          $(this).closest("div").find("h3").css("border-bottom", "none");
-
-
-        }
-        else {
-          $(this).closest("div").find("div:first").hide();
-          $(this).closest("div").find(".plus").text("+");
-          $(this).closest("div").find(".plus").css("background", "#888888");
-          $(this).closest("div").find(".plus").css("color", "#fff");
-          $(this).closest("div").find("h3").css("background", "#f3f3f3");
-          $(this).closest("div").find("h3").css("border", "2px solid var(--ion-color-primary)");
-        }
-      });
-    });
   }
 
+  toggle(index) {
+    console.log("Gettttttt2", index, document.getElementById('term' + index));
+    if (document.getElementById('exam-details-' + index).style.display == "none") {
+      document.getElementById('term' + index).style.borderTop = "2px solid var(--ion-color-primary)";
+      document.getElementById('term' + index).style.borderLeft = "2px solid var(--ion-color-primary)";
+      document.getElementById('term' + index).style.borderRight = "2px solid var(--ion-color-primary)";
+      document.getElementById('term' + index).style.borderBottom = "none";
+      document.getElementById('plus' + index).innerText = '-';
+      document.getElementById('exam-details-' + index).style.display = "block";
+    }
+    else {
+      document.getElementById('plus' + index).innerText = '+';
+      document.getElementById('exam-details-' + index).style.display = "none";
+      document.getElementById('term' + index).style.borderBottom = "2px solid var(--ion-color-primary)";
 
-
+    }
+  }
 
 }

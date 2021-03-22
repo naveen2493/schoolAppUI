@@ -20,7 +20,7 @@ export class AppComponent {
   items;
   // user = {};
   // Once we create the user model will remove this Mock
-  user = { username: "Sadasivam", student_name: "Naveen", class: "5th", phone: "9952267549", blood: 'O+ve', address: '28/23 Pandarinathan st, Ammapet, salem-636003.', email: "sadasivam@gmail.com", password: "qwerty123" }
+  user = { username: "Sadasivam", student_name: "Naveen", class: "5th", phone: "9952267549", blood: 'O+ve', address: '28/23 Pandarinathan st, Ammapet, salem-636003.', email: "sadasivam@gmail.com", password: "qwerty123", batch: "2020" }
   routerPage;
   editUser = false;
   editUserProfile = "";
@@ -148,7 +148,7 @@ export class AppComponent {
   }
 
   getUser() {
-    this.user = { username: "Sadasivam", student_name: "Naveen", class: "5th", phone: "9952267549", blood: 'O+ve', address: '28/23 Pandarinathan st, Ammapet, salem-636003.', email: "sadasivam@gmail.com", password: "qwerty123" }
+    this.user = { username: "Sadasivam", student_name: "Naveen", class: "5th", phone: "9952267549", blood: 'O+ve', address: '28/23 Pandarinathan st, Ammapet, salem-636003.', email: "sadasivam@gmail.com", password: "qwerty123", batch: "2020" }
   }
 
   openMenu() {

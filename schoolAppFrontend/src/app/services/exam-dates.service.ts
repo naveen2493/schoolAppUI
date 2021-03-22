@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ExamDatesService extends HttpBase{
 
+  addedEndPoint: string = '';
+
   constructor(public endPoint: Endpoint, public httpClient: HttpClient) {
     super(httpClient);
   }
@@ -17,7 +19,7 @@ export class ExamDatesService extends HttpBase{
   }
 
   get endpoint() {
-    return this.endPoint.examDates;
+    return this.endPoint.examDates + this.addedEndPoint;
   }
 
   getParams(httparams?) {

@@ -1,3 +1,4 @@
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SchoolFeesService } from '../../services/school-fees.service';
 
@@ -13,30 +14,27 @@ export class FeesDetailsPage implements OnInit {
   total:number = 0;
 
   feesDetails;
+  user = { username: "Sadasivam", student_name: "Naveen", class: "11", phone: "9952267549", blood: 'O+ve', address: '28/23 Pandarinathan st, Ammapet, salem-636003.', email: "sadasivam@gmail.com", password: "qwerty123", batch: "2020" }
+
 
   constructor(public schoolFeesService: SchoolFeesService) { }
 
   ngOnInit() {
-    /* Service response
-    this.schoolFeesService.get(this.schoolFeesService.getParams()).subscribe(
-      res => {
-        this.feesDetails = res[0];
-        Object.values(this.feesDetails).forEach(fee => {
-          console.log("Fee", fee, this.total);
-          this.total += +fee;
-        });
-      },
-      err => {
-        console.log("Errors", err);
+    this.getFeesDetails();
+  }
+
+  getFeesDetails() {
+    this.feesDetails = []
+    let params = new HttpParams();
+    params = params.append("class", this.user.class);
+    params = params.append("year", this.user.batch);
+
+    this.schoolFeesService.addedEndPoint = 'one';
+    this.schoolFeesService.get(params).subscribe(
+      data => {
+        this.feesDetails = data.schoolFeesData[0]
       }
-    );*/
+    )
 
-    let res = [{'Registration Fee': 2000, 'Admission Fee': 15000, 'Caution Deposit (Refundable)': 5000, 'Session Fee': 8000}];
-    this.feesDetails = res[0];
-
-    Object.values(this.feesDetails).forEach(fee => {
-      console.log("Fee", fee, this.total);
-      this.total += +fee;
-    });
   }
 }

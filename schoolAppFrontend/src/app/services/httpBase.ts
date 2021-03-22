@@ -26,16 +26,18 @@ export abstract class HttpBase {
     get(httpParams?): Observable<any> {
         console.log("Http base", httpParams);
         if (httpParams) {
-            return this.httpClient.get(this.endpoint, {
-                headers: this.header,
-                params: httpParams
-
-            });
+            const httpOptions: any = {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            };
+            httpOptions.params = httpParams;
+            return this.httpClient.get(this.endpoint, httpOptions);
         }
 
-        return this.httpClient.get(this.endpoint, 
-           { headers: this.header }
-            );
+        return this.httpClient.get(this.endpoint,
+            { headers: this.header }
+        );
     }
 
     /**
@@ -51,19 +53,19 @@ export abstract class HttpBase {
             });
         }
         return this.httpClient.post(this.endpoint, data, {
-           headers: this.header
+            headers: this.header
         });
     }
 
 
-  put(data,httpParams?):Observable<any>{
-    let head = new HttpHeaders();
-    // if (this.isAuthenticatedEndpoint) {
-    //   head = head.set("Authorization", `Token ${this.token}`);
-    // }
-    return this.httpClient.put(this.endpoint, data, {
-      headers: head
-    });
-  }
+    put(data, httpParams?): Observable<any> {
+        let head = new HttpHeaders();
+        // if (this.isAuthenticatedEndpoint) {
+        //   head = head.set("Authorization", `Token ${this.token}`);
+        // }
+        return this.httpClient.put(this.endpoint, data, {
+            headers: head
+        });
+    }
 
 }

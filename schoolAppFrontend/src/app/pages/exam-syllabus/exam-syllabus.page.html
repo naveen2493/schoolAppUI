@@ -9,13 +9,13 @@
 
 <ion-content>
   <div class="container">
-    <div *ngFor="let subject of subjects">
+    <div *ngFor="let examDetail of examSyllabusDetails; let i = index">
       <div class="toggle mb-2">
-        <h3><span class="plus">+</span>{{subject}}</h3>
-        <div style="display: none;">
+        <h3 id="{{'term'+i}}" (click)="toggle(i)"><span class="plus" id="{{'plus'+i}}">+</span>{{examDetail.subject | uppercase}}</h3>
+        <div id="{{'exam-details-'+i}}" style="display: none;">
           <div class="wpb_text_column wpb_content_element">
             <div class="wpb_wrapper">
-              {{subjectSyllabus[subject]}}
+              {{examDetail.syllabus}}
             </div>
           </div>
         </div>

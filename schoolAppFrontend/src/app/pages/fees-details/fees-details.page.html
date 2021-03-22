@@ -9,14 +9,17 @@
 
 <ion-content>
   <table align="center">
-    <tr *ngFor="let fee of objectKeys(feesDetails)">
-       <td>{{fee}}</td>
-       <td>Rs.{{feesDetails[fee]}}/-</td>
+    <tr *ngFor="let feesDetail of feesDetails.splitup">
+       <td>{{feesDetail.name}}</td>
+       <td>Rs.{{feesDetail.amount}}/-</td>
     </tr>
-    <tr class="total">
+    <tr *ngIf="feesDetails.fees" class="total">
       <td>Total</td>
-      <td>Rs.{{total}}/-</td>
+      <td>Rs.{{feesDetails.fees}}/-</td>
    </tr>
+   <tr *ngIf="!feesDetails.fees" class="total">
+    <td>Fees not Found</td>
+ </tr>
  </table>
 
 </ion-content>
